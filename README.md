@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/ninest/ippt-utils/blob/master/assets/ippt-badge.svg" alt="IPPT Gold Badge" width="175" >
+  <img src="https://raw.githubusercontent.com/ninest/ippt-utils/master/assets/ippt-badge.svg" alt="IPPT Gold Badge" width="175" >
 </p>
 <h1 align="center">IPPT Utils</h1>
 <p align="center">Functions to calculate IPPT scores</p>
