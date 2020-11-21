@@ -1,0 +1,28 @@
+{
+  "name": "ippt-utils",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --env=node",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.{ts,js}\""
+  },
+  "keywords": [
+    "Singapore",
+    "Armed Forces",
+    "National Service"
+  ],
+  "author": "ninest",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.9",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
+  }
+}
