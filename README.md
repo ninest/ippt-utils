@@ -6,6 +6,12 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/license/ninest/ippt-utils?style=flat-square" alt="MIT" />
+
+  <img alt="npm" src="https://img.shields.io/npm/v/ippt-utils?style=flat-square">
+
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/ippt-utils?style=flat-square">
+
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/ippt-utils?style=flat-square">
 </p>
 
 ## 📄 Docs

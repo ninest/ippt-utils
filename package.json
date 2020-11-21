@@ -1,7 +1,7 @@
 {
   "name": "ippt-utils",
   "version": "0.1.1",
-  "description": "",
+  "description": "Functions to calculate IPPT scores",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -16,6 +16,14 @@
   ],
   "author": "ninest",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ninest/ippt-utils/issues"
+  },
+  "homepage": "https://github.com/ninest/ippt-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninest/ippt-utils.git"
+  },
   "dependencies": {
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.9",
