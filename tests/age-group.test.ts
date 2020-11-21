@@ -1,4 +1,3 @@
-import { format } from 'path';
 import { getAgeGroup } from '../src/index';
 
 test.each([
@@ -11,6 +10,6 @@ test.each([
   [57, 13],
   [60, 14],
   [69, 14],
-])('Age groups', (age, ageGroup) => {
+])('A %p year old man is in age group %p', (age, ageGroup) => {
   expect(getAgeGroup(age)).toBe(ageGroup);
 });
