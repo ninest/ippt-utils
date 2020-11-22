@@ -1,11 +1,11 @@
 /* 
 [
-  index is ageGroup 1: [
+  (index+1) is ageGroup 1: [
     score for 1 pushup,
     score for 2 pushups,
     ...
   ],
-  index is ageGroup 2: [
+  (index+1) is ageGroup 2: [
     score for 1 pushup,
     score for 2 pushups,
     ...

@@ -33,6 +33,52 @@ import {
 // Coming soon
 ```
 
+### Score tables
+
+#### Statics
+
+The pushups and situps score table are in the same structure of an array of arrays.
+
+- It is an array of score lists. The first array is the score list of age group 1, the second is for age group 2, and so on.
+- The score lists have scores. The index of each element is the number of reps. At age group 14 (the last one), doing 3 pushups gives a score of 2.
+
+```js
+// scoreTable is the entire array of arrays as described above
+// ageGroup is the age group found from the getAgeGroup method
+// reps is the number of pushups or situps
+const score = scoreTable[ageGroup - 1][reps - 1];
+
+// Remember that array indexes start with 0
+```
+
+#### Run
+
+There is a run score table, and array of arrays, and a run times array.
+
+- Similar to statics, it's an array of score lists. The first array is the score list of age group 1, and so on.
+- The score lists have scores corresponding to each timing in runTimes.
+- The run times have their own separate array of seconds.
+
+```js
+/*
+secs is the run time in seconds, for example 1090 seconds
+- it must be a multiple of 10
+- it must not be more than runTimes[0] or less than the last element of runTimes
+
+Example:
+*/
+const secs = 1090;
+
+
+// pos is the position of secs in runTimes
+const pos =  runTimes.indexOf(secs) // 1
+
+
+// Now using pos, we can get the score from the score table
+const scoreTable = runningScoreTable[ageGroup]
+const score = scoreTable[pos]
+```
+
 ## ⚙️ Build setup
 
 Clone or fork the repository, then run
