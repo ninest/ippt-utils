@@ -9,6 +9,8 @@
 
   <img alt="npm" src="https://img.shields.io/npm/v/ippt-utils?style=flat-square">
 
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/ninest/ippt-utils/Run%20tests?style=flat-square">
+
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/ippt-utils?style=flat-square">
 
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/ippt-utils?style=flat-square">
@@ -48,10 +50,13 @@ The pushups and situps score table are in the same structure of an array of arra
 // scoreTable is the entire array of arrays as described above
 // ageGroup is the age group found from the getAgeGroup method
 // reps is the number of pushups or situps
-const score = scoreTable[ageGroup - 1][reps - 1];
+const scoreList = scoreTable[ageGroup - 1];
+const score = scoreList[reps - 1];
 
 // Remember that array indexes start with 0
 ```
+
+If the reps are over 60, the score stays at 25.
 
 #### Run
 
@@ -71,15 +76,15 @@ Example:
 */
 const secs = 1090;
 
-
 // pos is the position of secs in runTimes
-const pos = runTimes.indexOf(secs) // 1
-
+const pos = runTimes.indexOf(secs); // 1
 
 // Now using pos, we can get the score from the score table
-const scoreList = runningScoreTable[ageGroup]
-const score = scoreList[pos]
+const scoreList = runningScoreTable[ageGroup - 1];
+const score = scoreList[pos];
 ```
+
+If the run is faster than 8 minutes, 30 seconds, the score is still 50.
 
 ## ⚙️ Build setup
 

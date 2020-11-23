@@ -9,7 +9,7 @@ function getStaticScore(station: Station, ageGroup: number, reps: number): numbe
   /*
   Highest score (25 points) is with 60 reps
   */
- if (reps > 60) reps = 60;
+  if (reps > 60) reps = 60;
 
   /* 
   Get score depending on age group
