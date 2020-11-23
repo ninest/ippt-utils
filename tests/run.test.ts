@@ -4,6 +4,8 @@ test.each([
   // age, seconds, score
   [20, 1200, 0], // 20 minutes
   [20, 900, 12], // 15 minutes
+  [20, 550, 44], // 9:10 minutes
+  [20, 520, 49], // 8:40 minutes
   [20, 510, 50], // 8:30 minutes
 ])('%p year old, %p seconds run = %p points', (age, seconds, expectedScore) => {
   const ageGroup = getAgeGroup(age);

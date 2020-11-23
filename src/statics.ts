@@ -1,6 +1,6 @@
 import { stat } from 'fs';
 import pushupScoreTable from './data/pushup-score-table';
-import situpScoreTable from './data/pushup-score-table';
+import situpScoreTable from './data/situp-score-table';
 import { Station } from './types';
 
 function getStaticScore(station: Station, ageGroup: number, reps: number): number[] {
