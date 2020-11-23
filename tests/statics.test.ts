@@ -6,10 +6,12 @@ Data from https://www.nyp.edu.sg/content/dam/nyp/campus-life/cca-activities-and-
 
 test.each([
   // age, reps, score
+  [20, 0, 0],
   [20, 1, 0],
   [20, 14, 0],
   [20, 15, 1],
   [20, 45, 21],
+  [20, 100, 25],
 ])('%p year old, %p pushups = score %p', (age, reps, expectedScore) => {
   const ageGroup = getAgeGroup(age);
   const [score, nextPointReps] = getPushupScore(ageGroup, reps);
