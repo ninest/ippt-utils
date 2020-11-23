@@ -86,6 +86,15 @@ const score = scoreList[pos];
 
 If the run is faster than 8 minutes, 30 seconds, the score is still 50.
 
+### Inconsistencies
+
+|Age and stat | [Score table](https://www.ns.sg/nsp/wcm/connect/9e1e31dc-cc14-46f1-83b2-3246fe2f8bbf/New+IPPT+Format+and+Scoring+System+for+Hometeam.pdf?MOD=AJPERES) | [MINDEF website](https://www.ns.sg/web/portal/nsmen/home/nstopics/ippt-ipt-rt/ippt/ippt-stations-and-scoring-system/scoring-calculation) |
+| --- | --- | --- |
+| 20 years, 9:10 run | 44 points | 46 points |
+| 40 years, 45 pushups | 22 points | 23 points |
+
+See [#1](https://github.com/ninest/ippt-utils/issues/1).
+
 ## ⚙️ Build setup
 
 Clone or fork the repository, then run
@@ -103,7 +112,7 @@ npm run format
 npm run build
 ```
 
-Run `npm run format` before commiting.
+Format and ensure tests pass before pushing.
 
 ## 📜 License
 

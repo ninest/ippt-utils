@@ -1,6 +1,6 @@
 {
   "name": "ippt-utils",
-  "version": "0.1.1",
+  "version": "0.1.2-0",
   "description": "Functions to calculate IPPT scores",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
