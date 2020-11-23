@@ -36,5 +36,5 @@ export default function getRunScore(ageGroup: number, seconds: number): number[]
     }
   }
 
-  return [score, nextPointCounter];
+  return 1000;
 }
