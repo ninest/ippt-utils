@@ -35,6 +35,8 @@ import {
 
 ### Score tables
 
+All score tables are from [New IPPT Format And Scoring System For The Home Team](https://www.ns.sg/nsp/wcm/connect/9e1e31dc-cc14-46f1-83b2-3246fe2f8bbf/New+IPPT+Format+and+Scoring+System+for+Hometeam.pdf?MOD=AJPERES).
+
 #### Statics
 
 The pushups and situps score table are in the same structure of an array of arrays.
