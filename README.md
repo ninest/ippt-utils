@@ -73,12 +73,12 @@ const secs = 1090;
 
 
 // pos is the position of secs in runTimes
-const pos =  runTimes.indexOf(secs) // 1
+const pos = runTimes.indexOf(secs) // 1
 
 
 // Now using pos, we can get the score from the score table
-const scoreTable = runningScoreTable[ageGroup]
-const score = scoreTable[pos]
+const scoreList = runningScoreTable[ageGroup]
+const score = scoreList[pos]
 ```
 
 ## ⚙️ Build setup
