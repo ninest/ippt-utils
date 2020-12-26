@@ -16,23 +16,91 @@
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/ippt-utils?style=flat-square">
 </p>
 
-## 📄 Docs
+## Features
+- [x] Get scores for statics and run
+- [x] Get reps needed for the next point
+- [x] Calculate entire IPPT score and get award
+- [x] TypeScript
+- [ ] Tests
+- [ ] Support female IPPT score
+
+## Docs
 
 ```bash
 npm install ippt-utils
 ```
 
 ```js
-import {
-  getAgeGroup,
-  getPushupScore,
-  getSitupScore,
-  getRunScore,
-  getIpptScore,
-} from 'ippt-utils';
+import { getAgeGroup, getPushupScore, getSitupScore, getRunScore } from 'ippt-utils';
+// Or
+const { getAgeGroup, getPushupScore, getSitupScore, getRunScore } = require('ippt-utils');
 
-// ...
-// Coming soon
+const age = 22;
+const ageGroup = getAgeGroup(age);
+// => 2 (a 22-year old man is in the age group 2)
+
+const pushupsDone = 31;
+const pushupScore = getPushupScore(ageGroup, pushupsDone);
+// => [17, 3] (for pushups, he got a score of 17
+// and he needs to do three more pushup to get the next point)
+
+const situpsDone = 37;
+const situpScore = getSitupScore(ageGroup, situpsDone);
+// => [19, 2] (for situps, he got a score of 19
+// and he needs to do two more situps to get the next point)
+
+// 10 min, 10 seconds
+const runTime = 10 * 60 + 10; // in seconds
+const runScore = getRunScore(ageGroup, runTime);
+// => [40, 20] (score of 40 for run
+// and he needs to reduce his time by 20 seconds for next point)
+
+// Note that run times round up to the nearest 10 seconds, so a
+// run time of 10 min 1 second is the same as 10 min 10 seconds
+```
+
+All of this can also be done in a single function:
+
+```js
+import { getAgeGroup, getIpptScore } from 'ippt-utils';
+
+const age = 22;
+const ageGroup = getAgeGroup(age); // age group 2
+
+const pushupsDone = 31;
+const situpsDone = 37;
+const runTime = 10 * 60 + 10; // 10 min, 10 seconds
+
+const result = getIpptScore(ageGroup, pushupsDone, situpsDone, runTime);
+/* 
+{
+  pushups: { 
+    score: 17, 
+    next: 3  <-- 3 pushups more = 1 more point
+  },
+  situps: { 
+    score: 19, 
+    next: 2 
+  },
+  run: { 
+    score: 40, 
+    next: 20 
+  },
+  score: 76,
+  ageGroup: 2,
+  award: { 
+    name: 'Silver', 
+    cash: 300, 
+    minScore: 75 
+  }
+}
+*/
+
+result.score;
+// => 76
+
+result.award.name;
+// => 'Silver'
 ```
 
 ### Score tables
@@ -88,14 +156,14 @@ If the run is faster than 8 minutes, 30 seconds, the score is still 50.
 
 ### Inconsistencies
 
-|Age and stat | [Score table](https://www.ns.sg/nsp/wcm/connect/9e1e31dc-cc14-46f1-83b2-3246fe2f8bbf/New+IPPT+Format+and+Scoring+System+for+Hometeam.pdf?MOD=AJPERES) | [MINDEF website](https://www.ns.sg/web/portal/nsmen/home/nstopics/ippt-ipt-rt/ippt/ippt-stations-and-scoring-system/scoring-calculation) |
-| --- | --- | --- |
-| 20 years, 9:10 run | 44 points | 46 points |
-| 40 years, 45 pushups | 22 points | 23 points |
+| Age and stat         | [Score table](https://www.ns.sg/nsp/wcm/connect/9e1e31dc-cc14-46f1-83b2-3246fe2f8bbf/New+IPPT+Format+and+Scoring+System+for+Hometeam.pdf?MOD=AJPERES) | [MINDEF website](https://www.ns.sg/web/portal/nsmen/home/nstopics/ippt-ipt-rt/ippt/ippt-stations-and-scoring-system/scoring-calculation) |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 20 years, 9:10 run   | 44 points                                                                                                                                             | 46 points                                                                                                                                |
+| 40 years, 45 pushups | 22 points                                                                                                                                             | 23 points                                                                                                                                |
 
 See [#1](https://github.com/ninest/ippt-utils/issues/1).
 
-## ⚙️ Build setup
+## Build setup
 
 Clone or fork the repository, then run
 
@@ -114,6 +182,6 @@ npm run build
 
 Format and ensure tests pass before pushing.
 
-## 📜 License
+## License
 
 MIT

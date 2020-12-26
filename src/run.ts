@@ -36,5 +36,16 @@ export default function getRunScore(ageGroup: number, seconds: number): number[]
     }
   }
 
+  /* 
+  Multiply by 10 because there is a difference of 10 seconds between each
+  score on the score table 
+  */
+  nextPointCounter = nextPointCounter * 10;
+
+  // If score is already 50, there is not next score
+  if (score == 50) {
+    nextPointCounter = 0;
+  }
+
   return [score, nextPointCounter];
 }
